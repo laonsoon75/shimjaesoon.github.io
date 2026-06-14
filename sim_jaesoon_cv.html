@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV · 심재순 · Shim Jae-soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400&family=Noto+Serif+KR:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    color: #1a1812;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0;
+    border-left: 0.5px solid #ddd5c0;
+    border-right: 0.5px solid #ddd5c0;
+    min-height: 100vh;
+  }
+
+  /* 상단 바 */
+  .top-bar {
+    border-top: 1.5px solid #1a1812;
+    border-bottom: 0.5px solid #ddd5c0;
+    padding: 0.6rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .top-bar a {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b8a888;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .top-bar a:hover { color: #1a1812; }
+
+  .top-bar-sep {
+    font-size: 10px;
+    color: #ddd5c0;
+  }
+
+  /* 헤더 */
+  .cv-header {
+    padding: 3rem 2.5rem 2.5rem;
+    border-bottom: 0.5px solid #ddd5c0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: end;
+  }
+
+  .header-name-block {}
+
+  .name-bg {
+    font-family: 'DM Serif Display', serif;
+    font-size: 96px;
+    font-style: italic;
+    color: #e8dcc8;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .name-kr-big {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 200;
+    font-size: 28px;
+    color: #9a8e78;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+
+  .name-title {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #b8a888;
+  }
+
+  .header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 4px;
+  }
+
+  .info-contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid #e8dcc8;
+  }
+
+  .info-contact-row:last-child { border-bottom: none; }
+
+  .info-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8b99a;
+  }
+
+  .info-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 13px;
+    color: #1a1812;
+  }
+
+  /* 바디 레이아웃 */
+  .cv-body {
+    display: grid;
+    grid-template-columns: 337px 1fr;
+  }
+
+  /* 왼쪽 컬럼 */
+  .col-left {
+    border-right: 0.5px solid #ddd5c0;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  /* 오른쪽 컬럼 */
+  .col-right {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  /* 섹션 */
+  .cv-section {}
+
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #1a1812;
+    margin-bottom: 2px;
+  }
+
+  .section-title-fr {
+    font-size: 8.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b8a888;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-divider {
+    height: 0.5px;
+    background: #ddd5c0;
+    margin-bottom: 1.25rem;
+  }
+
+  /* 프로필 텍스트 */
+  .profile-kr {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 300;
+    font-size: 12.5px;
+    color: #333;
+    line-height: 2;
+    margin-bottom: 1rem;
+  }
+
+  .profile-fr {
+    font-family: 'DM Serif Display', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #8a7a5a;
+    line-height: 1.8;
+  }
+
+  /* 학력 */
+  .edu-block { margin-bottom: 1rem; }
+
+  .edu-degree {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c8b99a;
+    margin-bottom: 3px;
+  }
+
+  .edu-school {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #1a1812;
+  }
+
+  .edu-school-fr {
+    font-size: 11px;
+    color: #9a8e78;
+    margin-bottom: 2px;
+  }
+
+  .edu-major {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 200;
+    font-size: 11px;
+    color: #6b5f47;
+  }
+
+  .edu-major-fr {
+    font-size: 10px;
+    color: #b8a888;
+    margin-bottom: 2px;
+  }
+
+  .edu-year {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 200;
+    font-size: 11px;
+    color: #b8a888;
+    margin-top: 2px;
+  }
+
+  /* 스킬 */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .skill-group-title {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #9a8e78;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-item {
+    font-size: 11px;
+    color: #444;
+    line-height: 1.9;
+  }
+
+  /* 경력 요약 */
+  .career-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .career-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid #e8dcc8;
+  }
+
+  .career-stat:last-child { border-bottom: none; }
+
+  .career-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #c8b99a;
+    flex-shrink: 0;
+    width: 48px;
+  }
+
+  .career-stat-text {}
+  .career-stat-kr {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: #333;
+  }
+  .career-stat-fr {
+    font-size: 10px;
+    color: #9a8e78;
+  }
+
+  /* 경력 항목 */
+  .exp-item {
+    padding-bottom: 1.75rem;
+    margin-bottom: 1.75rem;
+    border-bottom: 0.5px solid #e8dcc8;
+  }
+
+  .exp-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .exp-date {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: #b8a888;
+    margin-bottom: 5px;
+  }
+
+  .exp-company {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #9a8e78;
+    margin-bottom: 5px;
+  }
+
+  .exp-role-kr {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #1a1812;
+    margin-bottom: 2px;
+  }
+
+  .exp-role-fr {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #8a7a5a;
+    margin-bottom: 0.75rem;
+  }
+
+  .exp-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .exp-bullet {
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+  }
+
+  .bullet-dot {
+    width: 4px;
+    height: 4px;
+    background: #e60c11;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .bullet-kr {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 200;
+    font-size: 11px;
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .exp-bullet-fr {
+    font-size: 11px;
+    color: #8a7a5a;
+    font-style: italic;
+    padding-left: 1rem;
+    margin-top: 1px;
+    line-height: 1.6;
+  }
+
+  /* 하단 */
+  .cv-footer {
+    border-top: 1.5px solid #1a1812;
+    padding: 0.75rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 12px;
+    font-style: italic;
+    color: #9a8e78;
+  }
+
+  .footer-tag {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8b99a;
+  }
+
+/* ── PRINT STYLES ── */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    background: #faf7f2 !important;
+  }
+
+  .page {
+    max-width: 100%;
+    width: 210mm;
+    min-height: 297mm;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 프린트 안내 배너 숨기기 */
+  body > div:first-child { display: none; }
+
+  /* 상단 네비 숨기기 */
+  .top-bar { display: none; }
+
+  /* 헤더 */
+  .cv-header {
+    padding: 12mm 14mm 8mm;
+  }
+
+  .name-bg {
+    font-size: 72px;
+  }
+
+  /* 바디 */
+  .cv-body {
+    grid-template-columns: 80mm 1fr;
+    flex: 1;
+  }
+
+  .col-left {
+    padding: 8mm 8mm 8mm 14mm;
+    gap: 6mm;
+  }
+
+  .col-right {
+    padding: 8mm 14mm 8mm 8mm;
+    gap: 6mm;
+  }
+
+  /* 섹션 간격 */
+  .cv-section { page-break-inside: avoid; }
+  .exp-item { page-break-inside: avoid; }
+
+  /* 경력 항목 간격 줄이기 */
+  .exp-item {
+    padding-bottom: 5mm;
+    margin-bottom: 5mm;
+  }
+
+  .exp-bullets { gap: 2px; }
+  .exp-bullet-fr { margin-top: 0; }
+
+  /* 하단 */
+  .cv-footer {
+    padding: 4mm 14mm;
+    margin-top: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- 프린트 안내 (화면에서만 보임) -->
+  <div style="background:#1a1812;color:#faf7f2;text-align:center;padding:0.6rem;font-size:11px;letter-spacing:0.15em;">
+    크롬에서 <strong>Ctrl+P</strong> (Mac: <strong>⌘P</strong>) → 여백: 없음 · 배경 그래픽: 포함 → PDF로 저장
+  </div>
+
+  <!-- 상단 네비 -->
+  <div class="top-bar">
+    <a href="index.html">← 홈</a>
+    <span class="top-bar-sep">·</span>
+    <a href="shim_jaesoon_portfolio_updated.html">포트폴리오 보기</a>
+  </div>
+
+  <!-- 헤더 -->
+  <div class="cv-header">
+    <div class="header-name-block">
+      <div class="name-bg">Shim</div>
+      <div class="name-kr-big">심재순</div>
+      <div class="name-title">Graphiste · Directrice artistique · France &amp; Korea</div>
+    </div>
+    <div class="header-info">
+      <div class="info-contact-row">
+        <span class="info-label">Localisation</span>
+        <span class="info-val">Seoul · Lyon · Paris</span>
+      </div>
+      <div class="info-contact-row">
+        <span class="info-label">Langues</span>
+        <span class="info-val">한국어 · Français</span>
+      </div>
+      <div class="info-contact-row">
+        <span class="info-label">Disponibilité</span>
+        <span class="info-val">Freelance · Mission</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 바디 -->
+  <div class="cv-body">
+
+    <!-- 왼쪽: 프로필 + 학력 + 스킬 + 경력요약 -->
+    <div class="col-left">
+
+      <!-- 프로필 -->
+      <div class="cv-section">
+        <div class="section-title">Profil</div>
+        <div class="section-title-fr">소개</div>
+        <div class="section-divider"></div>
+        <p class="profile-kr">한국에서 인하우스 디자이너·신문사 편집기자로 13년 이상 활동 후 프랑스 이주, 10년간 프리랜서로 활동 중. 브랜드·편집·캐릭터 디자인 전반의 실무 경험과 한불 크로스컬처 역량 보유.</p>
+        <br>
+        <p class="profile-fr">Plus de 13 ans en Corée comme designer in-house et journaliste, puis 10 ans de freelance en France. Expertise en identité de marque et design éditorial.</p>
+      </div>
+
+      <!-- 학력 -->
+      <div class="cv-section">
+        <div class="section-title">Education</div>
+        <div class="section-title-fr">Formation</div>
+        <div class="section-divider"></div>
+        <div class="edu-block">
+          <div class="edu-degree">학사 / Licence</div>
+          <div class="edu-school">숙명여자대학교</div>
+          <div class="edu-school-fr">Univ. Sookmyung</div>
+          <div class="edu-major">산업디자인학과</div>
+          <div class="edu-major-fr">Design industriel</div>
+          <div class="edu-year">1994 – 1998</div>
+        </div>
+      </div>
+
+      <!-- 스킬 -->
+      <div class="cv-section">
+        <div class="section-title">Skills</div>
+        <div class="section-title-fr">Compétences</div>
+        <div class="section-divider"></div>
+        <div class="skills-grid">
+          <div>
+            <div class="skill-group-title">Tools</div>
+            <div class="skill-item">Photoshop</div>
+            <div class="skill-item">Illustrator</div>
+            <div class="skill-item">InDesign</div>
+            <div class="skill-item">Keynote</div>
+            <div class="skill-item">AI Tools</div>
+          </div>
+          <div>
+            <div class="skill-group-title">Expertise</div>
+            <div class="skill-item">Brand Identity</div>
+            <div class="skill-item">Editorial Design</div>
+            <div class="skill-item">Graphic Design</div>
+            <div class="skill-item">Character Dev.</div>
+            <div class="skill-item">Marketing Visual</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 경력 요약 -->
+      <div class="cv-section">
+        <div class="section-title">Career</div>
+        <div class="section-title-fr">Résumé</div>
+        <div class="section-divider"></div>
+        <div class="career-summary">
+          <div class="career-stat">
+            <span class="career-stat-num">15+</span>
+            <div class="career-stat-text">
+              <div class="career-stat-kr">총 경력 15년+</div>
+              <div class="career-stat-fr">Plus de 15 ans d'expérience</div>
+            </div>
+          </div>
+          <div class="career-stat">
+            <span class="career-stat-num">3</span>
+            <div class="career-stat-text">
+              <div class="career-stat-kr">인하우스 · 에이전시 · 프리랜서</div>
+              <div class="career-stat-fr">In-house · Agence · Freelance</div>
+            </div>
+          </div>
+          <div class="career-stat">
+            <span class="career-stat-num">2</span>
+            <div class="career-stat-text">
+              <div class="career-stat-kr">한국 · 프랑스</div>
+              <div class="career-stat-fr">Corée · France</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 오른쪽: 경력 -->
+    <div class="col-right">
+
+      <div class="cv-section">
+        <div class="section-title">Experience</div>
+        <div class="section-title-fr">Expérience professionnelle</div>
+        <div class="section-divider"></div>
+
+        <!-- DHC Korea -->
+        <div class="exp-item">
+          <div class="exp-date">2007.03 – 2014.06</div>
+          <div class="exp-company">DHC Korea · Seoul</div>
+          <div class="exp-role-kr">디자인팀 팀장 · 차장</div>
+          <div class="exp-role-fr">Responsable d'équipe design</div>
+          <div class="exp-bullets">
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">브랜드 시각 통일화 — 분산된 시각물 통합 관리</span>
+            </div>
+            <div class="exp-bullet-fr">Unification visuelle de la marque sur l'ensemble des supports</div>
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">맴버쉽 매거진 지속적 리뉴얼 및 퀄리티 향상</span>
+            </div>
+            <div class="exp-bullet-fr">Refonte du magazine membre, direction artistique complète</div>
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">화장품·건강식품 전 홍보 디자인 총괄</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 센스큐브 -->
+        <div class="exp-item">
+          <div class="exp-date">2006.05 – 2007.02</div>
+          <div class="exp-company">㈜센스큐브</div>
+          <div class="exp-role-kr">그래픽 디자이너</div>
+          <div class="exp-role-fr">Graphiste freelance</div>
+          <div class="exp-bullets">
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">GS건설 홍보 영상물 그래픽 디자인</span>
+            </div>
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">남양주시 시정소식지 "쾌" 창간 및 디자인 총괄</span>
+            </div>
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">평화누리 홍보물 제작</span>
+            </div>
+            <div class="exp-bullet-fr">Motion graphic GS Construction · Bulletin Namyangju · Production Pyeonghwa Nuri</div>
+          </div>
+        </div>
+
+        <!-- 한국일보 -->
+        <div class="exp-item">
+          <div class="exp-date">2003.04 – 2006.02</div>
+          <div class="exp-company">한국일보 편집국 · Seoul</div>
+          <div class="exp-role-kr">편집기자</div>
+          <div class="exp-role-fr">Journaliste maquettiste</div>
+          <div class="exp-bullets">
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">스포츠한국 창간 그래픽 디자인 및 연예면 편집</span>
+            </div>
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">주간한국 편집 디자인</span>
+            </div>
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">일러스트 삽화 제작</span>
+            </div>
+            <div class="exp-bullet-fr">Lancement graphique Sports Korea · Maquette Jugan Hankook · Illustrations éditoriales</div>
+          </div>
+        </div>
+
+        <!-- 캐리밸리/HII -->
+        <div class="exp-item">
+          <div class="exp-date">2000.10 – 2003.04</div>
+          <div class="exp-company">㈜캐리밸리 / ㈜HII</div>
+          <div class="exp-role-kr">전략기획실 팀장 · 디자인팀 과장</div>
+          <div class="exp-role-fr">Responsable stratégie · Chef de projet design</div>
+          <div class="exp-bullets">
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">캐릭터 개발·디자인 업무 총괄</span>
+            </div>
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">웹·모바일 서비스 기획, KTF·SK Telecom 운영</span>
+            </div>
+            <div class="exp-bullet">
+              <span class="bullet-dot"></span>
+              <span class="bullet-kr">브로슈어 디자인 총책임, 전시회 기획 총괄</span>
+            </div>
+            <div class="exp-bullet-fr">Direction création personnages · Services mobiles KTF/SK · Coordination expositions</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 하단 -->
+  <div class="cv-footer">
+    <span class="footer-name">Shim Jae-soon · 심재순</span>
+    <span class="footer-tag">Curriculum Vitæ · 2025</span>
+  </div>
+
+</div>
+
+</body>
+</html>
